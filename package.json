@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/McDaddy/McDaddy-Koa-Demo#readme",
   "dependencies": {
-    "koa": "^2.5.1"
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "node-excel-export": "^1.4.3"
   }
 }
