@@ -22,7 +22,13 @@ app.use( async ( ctx ) => {
     // 当POST请求的时候，解析POST表单里的数据，并显示出来
     let postData = await parsePostData( ctx )
     ctx.body = postData
-  } else {
+  } else if (ctx.url.indexOf('/jsonp') != -1) {
+    let query = ctx.query;
+    console.log(query);
+    let cb = query.cb;
+    ctx.body = `${cb}(JSON.stringify({msg: 'my-jsonp'}))`;
+  }
+  else {
     // 其他请求显示404
     ctx.body = '<h1>404！！！ o(╯□╰)o</h1>'
   }
